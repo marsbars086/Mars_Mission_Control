@@ -4,12 +4,13 @@
     import ProjectTracker from "./ProjectTracker.svelte";
     import Gallery from "./Gallery.svelte";
     import Quotes from "./Quotes.svelte";
+    import RowPatternCounter from "./RowPatternCounter.svelte";
     import '@fontsource/londrina-outline';
     function hihi() {
         console.log("hello")
     }
     //thanks maya youre the best
-
+    let ShowRowCounter = $state(true)
 </script>
 
 <div class="hi_svelte">
@@ -67,7 +68,13 @@
         <div
         class="shadowedboxsmall"
         >
-        <RowCounter/>
+        {#if ShowRowCounter}
+        <button onclick={()=>ShowRowCounter= false}>Pattern Counter</button>
+         <RowCounter/>
+        {:else}
+        <button onclick={()=>ShowRowCounter= true}>Row Counter</button>
+        <RowPatternCounter/>
+        {/if}
         </div>
     </div>
     </div>
