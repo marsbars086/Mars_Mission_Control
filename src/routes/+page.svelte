@@ -8,6 +8,7 @@
     function hihi() {
         console.log("hello")
     }
+    //thanks maya youre the best
 
 </script>
 
